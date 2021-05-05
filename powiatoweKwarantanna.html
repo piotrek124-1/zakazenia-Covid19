@@ -21,9 +21,8 @@
                 <div class="dropdown-menu">
                     <a href="powiatoweWykres.html" class="dropdown-item">Wykres</a>
                     <a href="powiatoweSrednia.html" class="dropdown-item">Wykres z średnią 7 dniową</a>
-                    <a href="powiatoweProcent.html" class="dropdown-item active">% pozytywnych wyników</a>
-                    <a href="powiatoweKwarantanna.html" class="dropdown-item">Liczba osób objętych kwarantanną</a>
-
+                    <a href="powiatoweProcent.html" class="dropdown-item">% pozytywnych wyników</a>
+                    <a href="powiatoweKwarantanna.html" class="dropdown-item active">Liczba osób objętych kwarantanną</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -32,6 +31,7 @@
                     <a href="wojewodzkieWykres.html" class="dropdown-item">Wykres</a>
                     <a href="wojewodzkieSrednia.html" class="dropdown-item">Wykres z średnią 7 dniową</a>
                     <a href="wojewodzkieProcent.html" class="dropdown-item">% pozytywnych wyników</a>
+                    <a href="wojewodzkieKwarantanna.html" class="dropdown-item">Liczba osób objętych kwarantanną</a>
                 </div>
             </li>
             <li class="nav-item">
@@ -73,14 +73,14 @@
                 csv = true
             })
         }
-        var procent = [], stan_rekordu_na = [], powiatName
+        var osobyNaKwarantannie = [], stan_rekordu_na = [], powiatName
         function plot() {
             function activePowiat(powiat) {
-                procent = []
+                osobyNaKwarantannie = []
                 stan_rekordu_na = []
                 for (i in plotCsvData) {
                     if (plotCsvData[i]["powiat_miasto"] === powiat) {
-                        procent.push(plotCsvData[i]["liczba_testow_z_wynikiem_pozytywnym"] / plotCsvData[i]["liczba_wykonanych_testow"] * 100)
+                        osobyNaKwarantannie.push(plotCsvData[i]["liczba_osob_objetych_kwarantanna"])
                         stan_rekordu_na.push(plotCsvData[i]["stan_rekordu_na"])
                     }
                 }
@@ -89,21 +89,21 @@
             activePowiat(document.getElementById("powiatSelect").value)
             var trace = {
                 x: stan_rekordu_na,
-                y: procent,
+                y: osobyNaKwarantannie,
                 mode: "lines",
                 name: powiatName
             }
             activePowiat(document.getElementById("powiatSelect2").value)
             var trace2 = {
                 x: stan_rekordu_na,
-                y: procent,
+                y: osobyNaKwarantannie,
                 mode: "lines",
                 name: powiatName
             }
             activePowiat(document.getElementById("powiatSelect3").value)
             var trace3 = {
                 x: stan_rekordu_na,
-                y: procent,
+                y: osobyNaKwarantannie,
                 mode: "lines",
                 name: powiatName
             }
@@ -122,7 +122,7 @@
                     tickvals: tick,
                     tickformat: "%d/%m"
                 }, yaxis: {
-                    title: "% pozytywnych wyników"
+                    title: "Liczba osób objętych kwarantanną"
                 }
             }
             var plotData = [trace, trace2, trace3]
@@ -134,5 +134,6 @@
 <div>
     Źródło danych:
     <a href= "https://gov.pl/">https://gov.pl/</a>
-</div></body>
+</div>
+</body>
 </html>
