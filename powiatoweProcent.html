@@ -64,13 +64,13 @@
         document.getElementById("powiatSelect2").addEventListener("input", plot)
         document.getElementById("powiatSelect3").addEventListener("input", plot)
         var csv = false
+        var plotCsvData = []
         if (csv === false) {
             csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazenia-Covid19/main/plotData/powiaty_kompletne.csv", function (error, data) {
                 plotCsvData = data
                 csv = true
             })
         }
-        var plotCsvData = []
         var procent = [], stan_rekordu_na = [], powiatName
         function plot() {
             function activePowiat(powiat) {
@@ -120,7 +120,7 @@
                     tickvals: tick,
                     tickformat: "%d/%m"
                 }, yaxis: {
-                    title: "% pozytywnych przypadków"
+                    title: "% pozytywnych wyników"
                 }
             }
             var plotData = [trace, trace2, trace3]
