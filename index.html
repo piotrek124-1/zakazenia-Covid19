@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Strona główna</title>
+    <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="bootstrap-4.0.0/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html" style="color: white;background-color: cornflowerblue">Strona główna</a>
+            </li>
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" style="color: cornflowerblue">Dane powiatowe</a>
+                <div class="dropdown-menu">
+                    <a href="powiatoweWykres.html" class="dropdown-item">Wykres</a>
+                    <a href="powiatoweSrednia.html" class="dropdown-item">Wykres z średnią 7 dniową</a>
+                    <a href="powiatoweProcent.html" class="dropdown-item">% pozytywnych wyników</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" style="color: cornflowerblue">Dane wojewódzkie</a>
+                <div class="dropdown-menu">
+                    <a href="wojewodzkieWykres.html" class="dropdown-item">Wykres</a>
+                    <a href="wojewodzkieSrednia.html" class="dropdown-item">Wykres z średnią 7 dniową</a>
+                    <a href="wojewodzkieProcent.html" class="dropdown-item">% pozytywnych wyników</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="ogolnopolskie.html" style="color: cornflowerblue">Dane ogólnopolskie</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="kontakt.html" style="color: cornflowerblue">Kontakt</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gitHub.html" style="color: cornflowerblue">GitHub</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<p class="p-3">Dane zostały przedstawione jedynie w celach poglądowych, bez gwarancji ich poprawności. Sugestie oraz błędy można zgłaszać na adres e-mail: <a href="mailto:piotrek124@gmail.com">piotrek124@gmail.com</a>  <br> Daty przedstawione na wykresach zostały przedstawione zgodnie z wartościami podanymi w raportach Ministerstwa Zdrowia, dlatego ich wartości mogą różnić się od tych przedstawionych na innych stronach. Przykładowo w raporcie opublikowanym 20 marca znajduje się data 19 marca.</p>
+</body>
+</html>
