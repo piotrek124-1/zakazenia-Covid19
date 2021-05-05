@@ -65,7 +65,7 @@
         document.getElementById("powiatSelect3").addEventListener("input", plot)
         var csv = false
         if (csv === false) {
-            csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/Wykres-liczby-zakazen/main/plotData/casesUTF-8.csv", function (error, data) {
+            csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazenia-Covid19/main/plotData/powiaty_kompletne.csv", function (error, data) {
                 plotCsvData = data
                 csv = true
             })
