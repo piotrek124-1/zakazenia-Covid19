@@ -8,9 +8,9 @@ csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazeni
     plot()
 })
 function wykres() {
-    document.getElementById("wykres").className = "btn-info active"
-    document.getElementById("srednia").className = "btn-info"
-    document.getElementById("procent").className = "btn-info"
+    document.getElementById("wykres").className = "btn active"
+    document.getElementById("srednia").className = "btn"
+    document.getElementById("procent").className = "btn"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     for (i in plotCsvData) {
@@ -20,9 +20,9 @@ function wykres() {
     plot()
 }
 function srednia() {
-    document.getElementById("wykres").className = "btn-info"
-    document.getElementById("srednia").className = "btn-info active"
-    document.getElementById("procent").className = "btn-info"
+    document.getElementById("wykres").className = "btn"
+    document.getElementById("srednia").className = "btn active"
+    document.getElementById("procent").className = "btn"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     var sum = 0
@@ -43,9 +43,9 @@ function srednia() {
     plot()
 }
 function procent() {
-    document.getElementById("wykres").className = "btn-info"
-    document.getElementById("srednia").className = "btn-info"
-    document.getElementById("procent").className = "btn-info active"
+    document.getElementById("wykres").className = "btn"
+    document.getElementById("srednia").className = "btn"
+    document.getElementById("procent").className = "btn active"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     for (i in plotCsvData) {
