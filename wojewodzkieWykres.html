@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dane wojewódzkie</title>
+    <script src="plotly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="bootstrap-4.0.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -44,5 +45,20 @@
         </ul>
     </div>
 </nav>
+<div id="wojewodztwo">
+        <label for="wojewodztwoSelect">
+        </label>
+        Powiat/Miasto
+        <input multiple type="text" id = "wojewodztwoSelect" list="wojewodztwoList">
+        <label for="wojewodztwoSelect2"></label><input multiple type="text" id = "wojewodztwoSelect2" list="wojewodztwoList">
+        <label for="wojewodztwoSelect3"></label><input multiple type="text" id = "wojewodztwoSelect3" list="wojewodztwoList">
+        <datalist id = "wojewodztwoList"></datalist>
+</div>
+<script src="js/wojewodzkieWykres.js"></script>
+<div id="plot"></div>
+<div>
+    Źródło danych:
+    <a href= "https://gov.pl/">https://gov.pl/</a>
+</div>
 </body>
 </html>

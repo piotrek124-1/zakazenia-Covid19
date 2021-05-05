@@ -11,20 +11,20 @@ document.getElementById("wojewodztwoSelect3").addEventListener("input", plot)
 var csv = false
 var plotCsvData = []
 if (csv === false) {
-    csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazenia-Covid19/main/plotData/wojewodztwa_zakazenia.csv", function (error, data) {
+    csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazenia-Covid19/main/plotData/wojewodztwa_kompletne.csv", function (error, data) {
         plotCsvData = data
         csv = true
     })
 }
-var liczbaPrzypadkow = [], stan_rekordu_na = [], wojewodztwoName
+var procent = [], stan_rekordu_na = [], wojewodztwoName
 
 function plot() {
     function activeWojewodztwo(wojewodztwo) {
-        liczbaPrzypadkow = []
+        procent = []
         stan_rekordu_na = []
         for (i in plotCsvData) {
             if (plotCsvData[i]["wojewodztwo"] === wojewodztwo) {
-                liczbaPrzypadkow.push(plotCsvData[i]["liczba_przypadkow"])
+                procent.push(plotCsvData[i]["liczba_testow_z_wynikiem_pozytywnym"] / plotCsvData[i]["liczba_wykonanych_testow"] * 100)
                 stan_rekordu_na.push(plotCsvData[i]["stan_rekordu_na"])
             }
         }
@@ -34,21 +34,21 @@ function plot() {
     activeWojewodztwo(document.getElementById("wojewodztwoSelect").value)
     var trace = {
         x: stan_rekordu_na,
-        y: liczbaPrzypadkow,
+        y: procent,
         mode: "lines",
         name: wojewodztwoName
     }
     activeWojewodztwo(document.getElementById("wojewodztwoSelect2").value)
     var trace2 = {
         x: stan_rekordu_na,
-        y: liczbaPrzypadkow,
+        y: procent,
         mode: "lines",
         name: wojewodztwoName
     }
     activeWojewodztwo(document.getElementById("wojewodztwoSelect3").value)
     var trace3 = {
         x: stan_rekordu_na,
-        y: liczbaPrzypadkow,
+        y: procent,
         mode: "lines",
         name: wojewodztwoName
     }
@@ -67,7 +67,7 @@ function plot() {
             tickvals: tick,
             tickformat: "%d/%m"
         }, yaxis: {
-            title: "Liczba przypadków"
+            title: "% pozytywnych wyników"
         }
     }
     var plotData = [trace, trace2, trace3]
