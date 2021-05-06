@@ -47,5 +47,5 @@ write.csv(frameWoj, file = "plotData\\wojewodztwa_kompletne.csv", fileEncoding =
 write.csv(f, file = "plotData\\wojewodztwa_zakazenia.csv", fileEncoding = "UTF-8")
 i <- 0
 frame2 <- read.csv("plotData//wojewodztwa_kompletne.csv", fileEncoding = "UTF-8")
-frameSum <- filter(frame2, wojewodztwo == "Cały kraj")
+frameSum <- filter(frame2, frame2$wojewodztwo == "Cały kraj")
 write.csv(frameSum, file = "plotData\\ogolnopolskie.csv", fileEncoding = "UTF-8")
