@@ -61,7 +61,7 @@ function plot() {
         }
     }
     var layout = {
-        title: "Wykres zakażeń Covid-19",
+        title: "Wykres liczby osób objętych kwarantanną",
         xaxis: {
             title: "data",
             tickvals: tick,

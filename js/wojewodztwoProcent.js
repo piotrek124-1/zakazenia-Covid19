@@ -61,7 +61,7 @@ function plot() {
         }
     }
     var layout = {
-        title: "Wykres zakażeń Covid-19",
+        title: "Wykres procentowy pozytywnych testów na Covid-19",
         xaxis: {
             title: "data",
             tickvals: tick,

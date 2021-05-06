@@ -72,7 +72,7 @@ function plot() {
         }
     }
     var layout = {
-        title: "Wykres zakażeń Covid-19",
+        title: "Wykres zakażeń Covid-19 (średnia 7 dniowa)",
         xaxis: {
             title: "data",
             tickvals: tick,
