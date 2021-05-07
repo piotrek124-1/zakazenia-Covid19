@@ -1,7 +1,14 @@
+currentDate <- Sys.Date()
+formatedDate <- format(currentDate, "%Y-%m-%d")
+powiatFileTitle <- gsub(" ", "", paste(gsub("-", "", formatedDate), "074502_rap_rcb_pow_eksport.csv"))
+wojewodztwoFileTitle <- gsub(" ", "", paste(gsub("-", "", formatedDate), "074512_rap_rcb_woj_eksport.csv"))
+
+download.file("https://www.arcgis.com/sharing/rest/content/items/6ff45d6b5b224632a672e764e04e8394/data", paste("dataCSV\\", powiatFileTitle))
+download.file("https://www.arcgis.com/sharing/rest/content/items/153a138859bb4c418156642b5b74925b/data", paste("dataWoj\\", wojewodztwoFileTitle))
+
 files <- list.files("dataCSV")
 i <- 0
 frame = data.frame()
-
 for (i in files) {
   csv <- gsub(" ", "", paste("dataCSV\\", i))
   data <- read.csv(csv, sep = ";", encoding = "Windows-1250")
