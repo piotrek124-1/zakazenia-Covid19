@@ -47,13 +47,20 @@
     </div>
 </nav>
 <div id="wojewodztwo">
-        <label for="wojewodztwoSelect">
-        </label>
-        Powiat/Miasto
-        <input multiple type="text" id = "wojewodztwoSelect" list="wojewodztwoList">
-        <label for="wojewodztwoSelect2"></label><input multiple type="text" id = "wojewodztwoSelect2" list="wojewodztwoList">
-        <label for="wojewodztwoSelect3"></label><input multiple type="text" id = "wojewodztwoSelect3" list="wojewodztwoList">
-        <datalist id = "wojewodztwoList"></datalist>
+    <label for="wojewodztwoSelect">
+    </label>
+    Powiat/Miasto
+    <select type="text" id = "wojewodztwoSelect">
+        <option value="none"></option>
+    </select>
+    <label for="wojewodztwoSelect2"></label>
+    <select type="text" id = "wojewodztwoSelect2">
+        <option value="none"></option>
+    </select>
+    <label for="wojewodztwoSelect3"></label>
+    <select type="text" id = "wojewodztwoSelect3">
+        <option value="none"></option>
+    </select>
 </div>
 <script src="js/wojewodzkieWykres.js"></script>
 <div id="plot"></div>
