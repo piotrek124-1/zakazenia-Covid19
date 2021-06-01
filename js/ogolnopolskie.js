@@ -7,11 +7,16 @@ csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazeni
     }
     plot()
 })
+let vaccinations = []
+vaccinationData = Plotly.d3.csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv", function (error, data) {
+        vaccinations = data
+})
 function wykres() {
     document.getElementById("wykres").className = "btn active"
     document.getElementById("srednia").className = "btn"
     document.getElementById("procent").className = "btn"
     document.getElementById("kwarantanna").className = "btn"
+    document.getElementById("szczepienia").className = "btn"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     for (i in plotCsvData) {
@@ -27,6 +32,7 @@ function srednia() {
     document.getElementById("srednia").className = "btn active"
     document.getElementById("procent").className = "btn"
     document.getElementById("kwarantanna").className = "btn"
+    document.getElementById("szczepienia").className = "btn"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     var sum = 0
@@ -52,6 +58,7 @@ function procent() {
     document.getElementById("srednia").className = "btn"
     document.getElementById("procent").className = "btn active"
     document.getElementById("kwarantanna").className = "btn"
+    document.getElementById("szczepienia").className = "btn"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     for (i in plotCsvData) {
@@ -67,6 +74,7 @@ function kwarantanna() {
     document.getElementById("srednia").className = "btn"
     document.getElementById("procent").className = "btn"
     document.getElementById("kwarantanna").className = "btn"
+    document.getElementById("szczepienia").className = "btn"
     liczbaPrzypadkow = []
     stan_rekordu_na = []
     for (i in plotCsvData) {
@@ -77,27 +85,64 @@ function kwarantanna() {
     yTitle = "Liczba osób objętych kwarantanną"
     plot()
 }
+
+function szczepienia() {
+    const data = vaccinations
+    liczbaPrzypadkow = []
+    stan_rekordu_na = []
+    for (i in data) {
+        if (data[i]["location"] === "Poland") {
+            liczbaPrzypadkow.push(data[i]["daily_vaccinations"])
+            stan_rekordu_na.push(data[i]["date"])
+        }
+    }
+    plotTitle = "Wykres liczby wykonanych szczepień"
+    yTitle = "Wykonane szczepienia"
+    console.log(liczbaPrzypadkow)
+    console.log(data)
+    plot()
+}
 function plot() {
     document.getElementById("wykres").addEventListener("click", wykres)
     document.getElementById("srednia").addEventListener("click", srednia)
     document.getElementById("procent").addEventListener("click", procent)
     document.getElementById("kwarantanna").addEventListener("click", kwarantanna)
+    document.getElementById("szczepienia").addEventListener("click", szczepienia)
 
     var trace = {
         x: stan_rekordu_na,
         y: liczbaPrzypadkow,
         mode: "lines",
-        name: "wykres"
+        name: "wykres",
     }
     var layout = {
         title: plotTitle,
         xaxis: {
             title: "data",
             tickvals: stan_rekordu_na,
-            tickformat: "%d/%m"
+            tickformat: "%d/%m",
+            rangeslider: {range: [liczbaPrzypadkow[0], liczbaPrzypadkow[liczbaPrzypadkow.lenght - 1]], bordercolor: "lightgrey", borderwidth: 1}
         }, yaxis: {
             title: yTitle
-        }
+        }, updatemenus: [{
+            buttons: [{
+                args: ["type", "scatter"],
+                label: "liniowy",
+                method: "restyle",
+            },
+                {
+                    args: ["type", "bar"],
+                    label: "słupkowy",
+                    method: "restyle"
+                }], x: 1, y: 1.25, yanchor: "top"
+        }, {
+            buttons: [{
+                args: ["fill", "none"],
+                label: "wypełnienie",
+                method: "restyle",
+                args2: ["fill", "tozeroy"]
+            }], x: 0.94, y: 1.25, yanchor: "top", type: "buttons"
+        }]
     }
     var plotData = [trace]
     Plotly.newPlot("plot", plotData, layout)

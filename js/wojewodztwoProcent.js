@@ -68,10 +68,29 @@ function plot() {
         xaxis: {
             title: "data",
             tickvals: tick,
-            tickformat: "%d/%m"
+            tickformat: "%d/%m",
+            rangeslider: {range: [stan_rekordu_na[0], stan_rekordu_na[stan_rekordu_na.lenght - 1]], bordercolor: "lightgrey", borderwidth: 1}
         }, yaxis: {
             title: "% pozytywnych wyników"
-        }
+        }, updatemenus: [{
+            buttons: [{
+                args: ["type", "scatter"],
+                label: "liniowy",
+                method: "restyle",
+            },
+                {
+                    args: ["type", "bar"],
+                    label: "słupkowy",
+                    method: "restyle"
+                }], x: 1, y: 1.25, yanchor: "top"
+        }, {
+            buttons: [{
+                args: ["fill", "none"],
+                label: "wypełnienie",
+                method: "restyle",
+                args2: ["fill", "tozeroy"]
+            }], x: 0.94, y: 1.25, yanchor: "top", type: "buttons"
+        }]
     }
     var plotData = [trace, trace2, trace3]
     Plotly.newPlot("plot", plotData, layout)

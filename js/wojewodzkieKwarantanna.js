@@ -1,11 +1,14 @@
 var data = ["Cały kraj","dolnośląskie","kujawsko-pomorskie","lubelskie","lubuskie","łódzkie","małopolskie","mazowieckie","opolskie","podkarpackie","podlaskie","pomorskie","śląskie","świętokrzyskie","warmińsko-mazurskie","wielkopolskie","zachodniopomorskie"]
-var newPowiat = document.getElementById("wojewodztwoList")
 for (i in data) {
-    newPowiat = document.getElementById("wojewodztwoList").appendChild(document.createElement("option"))
-    newPowiat.value = data[i]
+    wojewodztwoList = document.getElementById("wojewodztwoSelect").appendChild(document.createElement("option"))
+    wojewodztwoList.innerHTML = data[i]
+    wojewodztwoList2 = document.getElementById("wojewodztwoSelect2").appendChild(document.createElement("option"))
+    wojewodztwoList2.innerHTML = data[i]
+    wojewodztwoList3 = document.getElementById("wojewodztwoSelect3").appendChild(document.createElement("option"))
+    wojewodztwoList3.innerHTML = data[i]
 }
-newPowiat = document.getElementById("wojewodztwoSelect")
-newPowiat.addEventListener("input", plot)
+let newWojewodztwo = document.getElementById("wojewodztwoSelect")
+newWojewodztwo.addEventListener("input", plot)
 document.getElementById("wojewodztwoSelect2").addEventListener("input", plot)
 document.getElementById("wojewodztwoSelect3").addEventListener("input", plot)
 var csv = false
@@ -65,10 +68,29 @@ function plot() {
         xaxis: {
             title: "data",
             tickvals: tick,
-            tickformat: "%d/%m"
+            tickformat: "%d/%m",
+            rangeslider: {range: [stan_rekordu_na[0], stan_rekordu_na[stan_rekordu_na.lenght - 1]], bordercolor: "lightgrey", borderwidth: 1}
         }, yaxis: {
             title: "Liczba osób objętych kwarantanną"
-        }
+        }, updatemenus: [{
+            buttons: [{
+                args: ["type", "scatter"],
+                label: "liniowy",
+                method: "restyle",
+            },
+                {
+                    args: ["type", "bar"],
+                    label: "słupkowy",
+                    method: "restyle"
+                }], x: 1, y: 1.25, yanchor: "top"
+        }, {
+            buttons: [{
+                args: ["fill", "none"],
+                label: "wypełnienie",
+                method: "restyle",
+                args2: ["fill", "tozeroy"]
+            }], x: 0.94, y: 1.25, yanchor: "top", type: "buttons"
+        }]
     }
     var plotData = [trace, trace2, trace3]
     Plotly.newPlot("plot", plotData, layout)
