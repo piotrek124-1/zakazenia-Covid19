@@ -82,14 +82,14 @@ function plot() {
                     args: ["type", "bar"],
                     label: "słupkowy",
                     method: "restyle"
-                }], x: 1, y: 1, yanchor: "top"
+                }], x: 1, y: 1.25, yanchor: "top"
         }, {
             buttons: [{
                 args: ["fill", "none"],
                 label: "wypełnienie",
                 method: "restyle",
                 args2: ["fill", "tozeroy"]
-            }], x: 0.94, y: 1, yanchor: "top", type: "buttons"
+            }], x: 0.94, y: 1.25, yanchor: "top", type: "buttons"
         }]
     }
     var plotData = [trace, trace2, trace3]

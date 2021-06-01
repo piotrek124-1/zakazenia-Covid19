@@ -55,8 +55,8 @@
     <label for="powiatSelect3"></label><input multiple type="text" id = "powiatSelect3" list="powiatList">
     <datalist id = "powiatList"></datalist>
 <script>
-    var data = ["Cały kraj","aleksandrowski","augustowski","bartoszycki","bełchatowski","będziński","bialski","Biała Podlaska","białobrzeski","białogardzki","białostocki","Białystok","bielski","Bielsko-Biała","bieruńsko-lędziński","bieszczadzki","biłgorajski","bocheński","bolesławiecki","braniewski","brodnicki","brzeski","brzeziński","brzozowski","buski","bydgoski","Bydgoszcz","Bytom","bytowski","Chełm","chełmiński","chełmski","chodzieski","chojnicki","Chorzów","choszczeński","chrzanowski","ciechanowski","cieszyński","czarnkowsko-trzcianecki","Częstochowa","częstochowski","człuchowski","Dąbrowa Górnicza","dąbrowski","dębicki","drawski","działdowski","dzierżoniowski","Elbląg","elbląski","ełcki","garwoliński","Gdańsk","gdański","Gdynia","giżycki","Gliwice","gliwicki","głogowski","głubczycki","gnieźnieński","goleniowski","golubsko-dobrzyński","gołdapski","gorlicki","gorzowski","Gorzów Wielkopolski","gostyniński","gostyński","górowski","grajewski","grodziski","grójecki","Grudziądz","grudziądzki","gryficki","gryfiński","hajnowski","hrubieszowski","iławski","inowrocławski","janowski","jarociński","jarosławski","jasielski","Jastrzębie-Zdrój","jaworski","Jaworzno","Jelenia Góra","jeleniogórski","jędrzejowski","kaliski","Kalisz","kamiennogórski","kamieński","kartuski","Katowice","kazimierski","kędzierzyńsko-kozielski","kępiński","kętrzyński","Kielce","kielecki","kluczborski","kłobucki","kłodzki","kolbuszowski","kolneński","kolski","kołobrzeski","konecki","Konin","koniński","Koszalin","koszaliński","kościański","kościerski","kozienicki","krakowski","Kraków","krapkowicki","krasnostawski","kraśnicki","Krosno","krośnieński","krotoszyński","kutnowski","kwidzyński","legionowski","Legnica","legnicki","leski","leszczyński","Leszno","leżajski","lęborski","lidzbarski","limanowski","lipnowski","lipski","lubaczowski","lubański","lubartowski","lubelski","lubiński","Lublin","lubliniecki","lwówecki","łańcucki","łaski","łęczycki","łęczyński","łobeski","Łomża","łomżyński","łosicki","łowicki","łódzki wschodni","Łódź","łukowski","makowski","malborski","miechowski","mielecki","międzychodzki","międzyrzecki","mikołowski","milicki","miński","mławski","mogileński","moniecki","mrągowski","Mysłowice","myszkowski","myślenicki","myśliborski","nakielski","namysłowski","nidzicki","niżański","nowodworski","nowomiejski","nowosądecki","nowosolski","nowotarski","nowotomyski","Nowy Sącz","nyski","obornicki","olecki","oleski","oleśnicki","olkuski","Olsztyn","olsztyński","oławski","opatowski","opoczyński","Opole","opolski","ostrołęcki","Ostrołęka","ostrowiecki","ostrowski","ostródzki","ostrzeszowski","oświęcimski","otwocki","pabianicki","pajęczański","parczewski","piaseczyński","Piekary Śląskie","pilski","pińczowski","piotrkowski","Piotrków Trybunalski","piski","pleszewski","Płock","płocki","płoński","poddębicki","policki","polkowicki","Poznań","poznański","proszowicki","prudnicki","pruszkowski","przasnyski","przemyski","Przemyśl","przeworski","przysuski","pszczyński","pucki","puławski","pułtuski","pyrzycki","raciborski","Radom","radomski","radomszczański","radziejowski","radzyński","rawicki","rawski","ropczycko-sędziszowski","Ruda Śląska","rybnicki","Rybnik","rycki","rypiński","rzeszowski","Rzeszów","sandomierski","sanocki","sejneński","sępoleński","Siedlce","siedlecki","Siemianowice Śląskie","siemiatycki","sieradzki","sierpecki","skarżyski","Skierniewice","skierniewicki","sławieński","słubicki","słupecki","Słupsk","słupski","sochaczewski","sokołowski","sokólski","Sopot","Sosnowiec","stalowowolski","starachowicki","stargardzki","starogardzki","staszowski","strzelecki","strzelecko-drezdenecki","strzeliński","strzyżowski","sulęciński","suski","suwalski","Suwałki","szamotulski","Szczecin","szczecinecki","szczycieński","sztumski","szydłowiecki","średzki","śremski","świdnicki","świdwiński","świebodziński","świecki","Świętochłowice","Świnoujście","Tarnobrzeg","tarnobrzeski","tarnogórski","tarnowski","Tarnów","tatrzański","tczewski","tomaszowski","Toruń","toruński","trzebnicki","tucholski","turecki","Tychy","wadowicki","Wałbrzych","wałbrzyski","wałecki","Warszawa","warszawski zachodni","wąbrzeski","wągrowiecki","wejherowski","węgorzewski","węgrowski","wielicki","wieluński","wieruszowski","Włocławek","włocławski","włodawski","włoszczowski","wodzisławski","wolsztyński","wołomiński","wołowski","Wrocław","wrocławski","wrzesiński","wschowski","wysokomazowiecki","wyszkowski","Zabrze","zambrowski","zamojski","Zamość","zawierciański","ząbkowicki","zduńskowolski","zgierski","zgorzelecki","Zielona Góra","zielonogórski","złotoryjski","złotowski","zwoleński","żagański","żarski","żniński","Żory","żuromiński","żyrardowski","żywiecki"]
-    var newPowiat = document.getElementById("powiatList")
+    let data = ["Cały kraj","aleksandrowski","augustowski","bartoszycki","bełchatowski","będziński","bialski","Biała Podlaska","białobrzeski","białogardzki","białostocki","Białystok","bielski","Bielsko-Biała","bieruńsko-lędziński","bieszczadzki","biłgorajski","bocheński","bolesławiecki","braniewski","brodnicki","brzeski","brzeziński","brzozowski","buski","bydgoski","Bydgoszcz","Bytom","bytowski","Chełm","chełmiński","chełmski","chodzieski","chojnicki","Chorzów","choszczeński","chrzanowski","ciechanowski","cieszyński","czarnkowsko-trzcianecki","Częstochowa","częstochowski","człuchowski","Dąbrowa Górnicza","dąbrowski","dębicki","drawski","działdowski","dzierżoniowski","Elbląg","elbląski","ełcki","garwoliński","Gdańsk","gdański","Gdynia","giżycki","Gliwice","gliwicki","głogowski","głubczycki","gnieźnieński","goleniowski","golubsko-dobrzyński","gołdapski","gorlicki","gorzowski","Gorzów Wielkopolski","gostyniński","gostyński","górowski","grajewski","grodziski","grójecki","Grudziądz","grudziądzki","gryficki","gryfiński","hajnowski","hrubieszowski","iławski","inowrocławski","janowski","jarociński","jarosławski","jasielski","Jastrzębie-Zdrój","jaworski","Jaworzno","Jelenia Góra","jeleniogórski","jędrzejowski","kaliski","Kalisz","kamiennogórski","kamieński","kartuski","Katowice","kazimierski","kędzierzyńsko-kozielski","kępiński","kętrzyński","Kielce","kielecki","kluczborski","kłobucki","kłodzki","kolbuszowski","kolneński","kolski","kołobrzeski","konecki","Konin","koniński","Koszalin","koszaliński","kościański","kościerski","kozienicki","krakowski","Kraków","krapkowicki","krasnostawski","kraśnicki","Krosno","krośnieński","krotoszyński","kutnowski","kwidzyński","legionowski","Legnica","legnicki","leski","leszczyński","Leszno","leżajski","lęborski","lidzbarski","limanowski","lipnowski","lipski","lubaczowski","lubański","lubartowski","lubelski","lubiński","Lublin","lubliniecki","lwówecki","łańcucki","łaski","łęczycki","łęczyński","łobeski","Łomża","łomżyński","łosicki","łowicki","łódzki wschodni","Łódź","łukowski","makowski","malborski","miechowski","mielecki","międzychodzki","międzyrzecki","mikołowski","milicki","miński","mławski","mogileński","moniecki","mrągowski","Mysłowice","myszkowski","myślenicki","myśliborski","nakielski","namysłowski","nidzicki","niżański","nowodworski","nowomiejski","nowosądecki","nowosolski","nowotarski","nowotomyski","Nowy Sącz","nyski","obornicki","olecki","oleski","oleśnicki","olkuski","Olsztyn","olsztyński","oławski","opatowski","opoczyński","Opole","opolski","ostrołęcki","Ostrołęka","ostrowiecki","ostrowski","ostródzki","ostrzeszowski","oświęcimski","otwocki","pabianicki","pajęczański","parczewski","piaseczyński","Piekary Śląskie","pilski","pińczowski","piotrkowski","Piotrków Trybunalski","piski","pleszewski","Płock","płocki","płoński","poddębicki","policki","polkowicki","Poznań","poznański","proszowicki","prudnicki","pruszkowski","przasnyski","przemyski","Przemyśl","przeworski","przysuski","pszczyński","pucki","puławski","pułtuski","pyrzycki","raciborski","Radom","radomski","radomszczański","radziejowski","radzyński","rawicki","rawski","ropczycko-sędziszowski","Ruda Śląska","rybnicki","Rybnik","rycki","rypiński","rzeszowski","Rzeszów","sandomierski","sanocki","sejneński","sępoleński","Siedlce","siedlecki","Siemianowice Śląskie","siemiatycki","sieradzki","sierpecki","skarżyski","Skierniewice","skierniewicki","sławieński","słubicki","słupecki","Słupsk","słupski","sochaczewski","sokołowski","sokólski","Sopot","Sosnowiec","stalowowolski","starachowicki","stargardzki","starogardzki","staszowski","strzelecki","strzelecko-drezdenecki","strzeliński","strzyżowski","sulęciński","suski","suwalski","Suwałki","szamotulski","Szczecin","szczecinecki","szczycieński","sztumski","szydłowiecki","średzki","śremski","świdnicki","świdwiński","świebodziński","świecki","Świętochłowice","Świnoujście","Tarnobrzeg","tarnobrzeski","tarnogórski","tarnowski","Tarnów","tatrzański","tczewski","tomaszowski","Toruń","toruński","trzebnicki","tucholski","turecki","Tychy","wadowicki","Wałbrzych","wałbrzyski","wałecki","Warszawa","warszawski zachodni","wąbrzeski","wągrowiecki","wejherowski","węgorzewski","węgrowski","wielicki","wieluński","wieruszowski","Włocławek","włocławski","włodawski","włoszczowski","wodzisławski","wolsztyński","wołomiński","wołowski","Wrocław","wrocławski","wrzesiński","wschowski","wysokomazowiecki","wyszkowski","Zabrze","zambrowski","zamojski","Zamość","zawierciański","ząbkowicki","zduńskowolski","zgierski","zgorzelecki","Zielona Góra","zielonogórski","złotoryjski","złotowski","zwoleński","żagański","żarski","żniński","Żory","żuromiński","żyrardowski","żywiecki"]
+    let newPowiat = document.getElementById("powiatList")
     for (i in data) {
         newPowiat = document.getElementById("powiatList").appendChild(document.createElement("option"))
         newPowiat.value = data[i]
@@ -65,15 +65,15 @@
     newPowiat.addEventListener("input", plot)
     document.getElementById("powiatSelect2").addEventListener("input", plot)
     document.getElementById("powiatSelect3").addEventListener("input", plot)
-    var csv = false
-    var plotCsvData = []
+    let csv = false
+    let plotCsvData = []
     if (csv === false) {
         csvData = Plotly.d3.csv("https://raw.githubusercontent.com/piotrek124-1/zakazenia-Covid19/main/plotData/powiaty_zakazenia.csv", function (error, data) {
             plotCsvData = data
             csv = true
         })
     }
-    var liczbaPrzypadkow = [], stan_rekordu_na = [], powiatName
+    let liczbaPrzypadkow = [], stan_rekordu_na = [], powiatName
     function plot() {
         function activePowiat(powiat) {
             liczbaPrzypadkow = []
@@ -87,27 +87,27 @@
             powiatName = powiat
         }
         activePowiat(document.getElementById("powiatSelect").value)
-        var trace = {
+        let trace = {
             x: stan_rekordu_na,
             y: liczbaPrzypadkow,
             mode: "lines",
             name: powiatName
         }
         activePowiat(document.getElementById("powiatSelect2").value)
-        var trace2 = {
+        let trace2 = {
             x: stan_rekordu_na,
             y: liczbaPrzypadkow,
             mode: "lines",
             name: powiatName
         }
         activePowiat(document.getElementById("powiatSelect3").value)
-        var trace3 = {
+        let trace3 = {
             x: stan_rekordu_na,
             y: liczbaPrzypadkow,
             mode: "lines",
             name: powiatName
         }
-        var tick = trace.x
+        let tick = trace.x
         if (trace.x.length === 0) {
             if (trace2.x.length === 0) {
                 tick = trace3.x
@@ -115,17 +115,40 @@
                 tick = trace2.x
             }
         }
-        var layout = {
+        let layout = {
             title: "Wykres zakażeń Covid-19",
             xaxis: {
                 title: "data",
                 tickvals: tick,
-                tickformat: "%d/%m"
+                tickformat: "%d/%m",
+                rangeslider: {
+                    range: [stan_rekordu_na[0], stan_rekordu_na[stan_rekordu_na.lenght - 1]],
+                    bordercolor: "lightgrey",
+                    borderwidth: 1
+                }
             }, yaxis: {
                 title: "Liczba przypadków"
-            }
+            }, updatemenus: [{
+                buttons: [{
+                    args: ["type", "scatter"],
+                    label: "liniowy",
+                    method: "restyle",
+                },
+                    {
+                        args: ["type", "bar"],
+                        label: "słupkowy",
+                        method: "restyle"
+                    }], x: 1, y: 1.25, yanchor: "top"
+            }, {
+                buttons: [{
+                    args: ["fill", "none"],
+                    label: "wypełnienie",
+                    method: "restyle",
+                    args2: ["fill", "tozeroy"]
+                }], x: 0.94, y: 1.25, yanchor: "top", type: "buttons"
+            }]
         }
-        var plotData = [trace, trace2, trace3]
+        let plotData = [trace, trace2, trace3]
         Plotly.newPlot("plot", plotData, layout)
     }
 </script>

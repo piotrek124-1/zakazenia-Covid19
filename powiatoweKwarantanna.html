@@ -123,7 +123,25 @@
                     tickformat: "%d/%m"
                 }, yaxis: {
                     title: "Liczba osób objętych kwarantanną"
-                }
+                }, updatemenus: [{
+                    buttons: [{
+                        args: ["type", "scatter"],
+                        label: "liniowy",
+                        method: "restyle",
+                    },
+                        {
+                            args: ["type", "bar"],
+                            label: "słupkowy",
+                            method: "restyle"
+                        }], x: 1, y: 1.25, yanchor: "top"
+                }, {
+                    buttons: [{
+                        args: ["fill", "none"],
+                        label: "wypełnienie",
+                        method: "restyle",
+                        args2: ["fill", "tozeroy"]
+                    }], x: 0.94, y: 1.25, yanchor: "top", type: "buttons"
+                }]
             }
             var plotData = [trace, trace2, trace3]
             Plotly.newPlot("plot", plotData, layout)
